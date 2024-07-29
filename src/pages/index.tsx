@@ -1,20 +1,13 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
-import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
 
-import HomeLayout from '@/components/@Layout/HomeLayout';
-import Home from '@/containers/Home';
-import withHomePageProvider from '@/hocs/withHomePageProvider';
+export default function Redirect() {
+  const router = useRouter();
 
-function HomePage() {
-  return (
-    <>
-      {/* output: 똑똑한 개발자 | 메인 */}
-      {/* titleTemplate는 /configs/seo/config.ts에서 변경 가능합니다. */}
-      <NextSeo title="메인" />
-      <HomeLayout content={<Home />} />
-    </>
-  );
+  useEffect(() => {
+    // router.push('https://link.coupang.com/a/bLr0fm');
+  }, []);
+
+  return null;
 }
-
-export default withHomePageProvider(HomePage);
