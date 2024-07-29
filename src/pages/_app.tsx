@@ -6,7 +6,7 @@ export default function Redirect() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('https://link.coupang.com/a/bLr0fm');
+    // router.push('https://link.coupang.com/a/bLr0fm');
   }, []);
 
   return null;
