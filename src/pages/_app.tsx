@@ -1,26 +1,13 @@
-import { DefaultSeo } from 'next-seo';
+import { useEffect } from 'react';
 
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { useRouter } from 'next/router';
 
-import ControlledConfirmAlert from '@/components/@Alert/ControlledConfirmAlert';
-import ToggleColorModeButton from '@/components/ToggleColorModeButton';
-import TokDocsDevTools from '@/components/TokDocsDevTool';
-import withAppProvider from '@/hocs/withAppProvider';
+export default function Redirect() {
+  const router = useRouter();
 
-import { config as SEO } from '@/configs/seo/config';
+  useEffect(() => {
+    router.push('https://link.coupang.com/a/bLr0fm');
+  }, []);
 
-function App({ Component, pageProps }: any) {
-  return (
-    <>
-      {/* <Fonts /> */}
-      <DefaultSeo {...SEO} />
-      <ToggleColorModeButton />
-      <Component {...pageProps} />
-      <ControlledConfirmAlert />
-      <ReactQueryDevtools initialIsOpen={false} />
-      <TokDocsDevTools />
-    </>
-  );
+  return null;
 }
-
-export default withAppProvider(App);
